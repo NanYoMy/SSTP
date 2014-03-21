@@ -1,0 +1,1360 @@
+From: =?gb2312?B?08kgV2luZG93cyBJbnRlcm5ldCBFeHBsb3JlciA4ILGjtOY=?=
+Subject: Understanding Spanning-Tree Protocol
+Date: Fri, 29 Apr 2011 16:33:44 +0800
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0000_01CC068B.34EB7A10"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.1.7600.16385
+
+这是 MIME 格式的多方邮件。
+
+------=_NextPart_000_0000_01CC068B.34EB7A10
+Content-Type: text/html;
+	charset="gb2312"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.cisco.com/univercd/cc/td/doc/product/rtrmgmt/sw_ntman/cwsimain/cwsi2/cwsiug2/vlan2/stpapp.htm
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Understanding Spanning-Tree Protocol</TITLE>
+<META content=3D"text/html; charset=3Dgb2312" =
+http-equiv=3DContent-Type><!-- FileName =3D STPapp.fm --><!-- Folder =3D =
+/TD/Doc/Rtr_Mgmt/cwsi/cwsi_2/use_vlan --><!-- Object_ID =3D =
+090019e9801525a1 --><!-- Chronicle ID =3D 090019e98001c622 --><!-- =
+Revision =3D 6 --><!-- DocType =3D User Guide --><!-- ProdType =3D =
+cc/td/doc/product/rtrmgmt/sw_ntman/cwsimain/cwsi2/cwsiug2/vlan2 --><!-- =
+Sector =3D WBU --><!-- RelState =3D Released --><!-- PubDate =3D =
+12/17/1997 --><!-- PushDate =3D Wed Dec 17 22:08:39 PST 1997 --><!-- =
+Competitors =3D  --><!-- ParentTree =3D =
+cc/td/doc/product/rtrmgmt/sw_ntman/cwsimain/cwsi2/cwsiug2/vlan2 -->
+<META name=3DFileName content=3DSTPapp.fm>
+<META name=3DFolder content=3D/TD/Doc/Rtr_Mgmt/cwsi/cwsi_2/use_vlan>
+<META name=3DObject_ID content=3D090019e9801525a1>
+<META name=3D"Chronicle ID" content=3D090019e98001c622>
+<META name=3DRevision content=3D6>
+<META name=3DDocType content=3D"User Guide">
+<META name=3DProdType=20
+content=3Dcc/td/doc/product/rtrmgmt/sw_ntman/cwsimain/cwsi2/cwsiug2/vlan2=
+>
+<META name=3DSector content=3DWBU>
+<META name=3DRelState content=3DReleased>
+<META name=3DPubDate content=3D12/17/1997>
+<META name=3DPushDate content=3D"Wed Dec 17 22:08:39 PST 1997">
+<META name=3DCompetitors content=3D"">
+<META name=3DParentTree=20
+content=3Dcc/td/doc/product/rtrmgmt/sw_ntman/cwsimain/cwsi2/cwsiug2/vlan2=
+>
+<META name=3DGENERATOR content=3D"MSHTML 8.00.7600.16385"></HEAD>
+<BODY bgColor=3D#ffffff>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD><IMG border=3D0=20
+      alt=3Dcc/td/doc/product/rtrmgmt/sw_ntman/cwsimain/cwsi2/cwsiug2=20
+      src=3D"http://www.cisco.com/univercd/cc/lib/docstrip.gif" =
+width=3D504=20
+      height=3D21><BR><A =
+href=3D"http://www.cisco.com/univercd/home/home.htm"><IMG=20
+      border=3D0 alt=3Dhome =
+src=3D"http://www.cisco.com/univercd/cc/lib/csco/home.gif"=20
+      width=3D63 height=3D20></A><A=20
+      =
+href=3D"http://www.cisco.com/univercd/cc/td/doc/product/rtrmgmt/sw_ntman/=
+cwsimain/cwsi2/cwsiug2/vlan2/index.htm"><IMG=20
+      border=3D0 alt=3Dtoc =
+src=3D"http://www.cisco.com/univercd/cc/lib/csco/toc.gif"=20
+      width=3D63 height=3D20></A><A=20
+      =
+href=3D"http://www.cisco.com/univercd/cc/td/doc/product/rtrmgmt/sw_ntman/=
+cwsimain/cwsi2/cwsiug2/vlan2/vtpapp.htm"><IMG=20
+      border=3D0 alt=3Dprev =
+src=3D"http://www.cisco.com/univercd/cc/lib/csco/prev.gif"=20
+      width=3D63 height=3D20></A><A=20
+      =
+href=3D"http://www.cisco.com/univercd/cc/td/doc/product/rtrmgmt/sw_ntman/=
+cwsimain/cwsi2/cwsiug2/vlan2/errors.htm"><IMG=20
+      border=3D0 alt=3Dnext =
+src=3D"http://www.cisco.com/univercd/cc/lib/csco/next.gif"=20
+      width=3D63 height=3D20></A><A=20
+      =
+href=3D"http://www.cisco.com/univercd/cc/td/doc/cisintwk/ita/index.htm"><=
+IMG=20
+      border=3D0 alt=3Dglossary=20
+      src=3D"http://www.cisco.com/univercd/cc/lib/csco/gloss.gif" =
+width=3D63=20
+      height=3D20></A><A href=3D"http://www.cisco.com/feedback"><IMG =
+border=3D0=20
+      alt=3Dfeedback =
+src=3D"http://www.cisco.com/univercd/cc/lib/csco/feed.gif"=20
+      width=3D63 height=3D20></A><A=20
+      href=3D"http://www.cisco.com/univercd/home/search.htm"><IMG =
+border=3D0=20
+      alt=3Dsearch =
+src=3D"http://www.cisco.com/univercd/cc/lib/csco/search.gif"=20
+      width=3D63 height=3D20></A><A=20
+      href=3D"http://www.cisco.com/univercd/cc/lib/help.htm"><IMG =
+border=3D0=20
+      alt=3Dhelp =
+src=3D"http://www.cisco.com/univercd/cc/lib/csco/help.gif" width=3D63=20
+      height=3D20></A> <BR></TD></TR></TBODY></TABLE><A=20
+href=3D"http://www.cisco.com/univercd/cc/td/doc/product/rtrmgmt/sw_ntman/=
+cwsimain/cwsi2/cwsiug2/vlan2/stpapp.pdf"><IMG=20
+border=3D0 alt=3DPDF align=3Dright=20
+src=3D"http://www.cisco.com/univercd/cc/lib/csco/pdf_opt.gif" width=3D63 =
+
+height=3D65></A> <I></I>
+<H2>Table of Contents</H2><A=20
+href=3D"http://www.cisco.com/univercd/cc/td/doc/product/rtrmgmt/sw_ntman/=
+cwsimain/cwsi2/cwsiug2/vlan2/stpapp.htm#xtocid69350">
+<H3>Understanding Spanning-Tree Protocol</H3></A>
+<UL><A=20
+  =
+href=3D"http://www.cisco.com/univercd/cc/td/doc/product/rtrmgmt/sw_ntman/=
+cwsimain/cwsi2/cwsiug2/vlan2/stpapp.htm#xtocid69351"><B>Election=20
+  of the Root Switch</B><BR></A><A=20
+  =
+href=3D"http://www.cisco.com/univercd/cc/td/doc/product/rtrmgmt/sw_ntman/=
+cwsimain/cwsi2/cwsiug2/vlan2/stpapp.htm#xtocid69352"><B>Bridge=20
+  Protocol Data Units</B><BR></A><A=20
+  =
+href=3D"http://www.cisco.com/univercd/cc/td/doc/product/rtrmgmt/sw_ntman/=
+cwsimain/cwsi2/cwsiug2/vlan2/stpapp.htm#xtocid69353"><B>Spanning-Tree=20
+  Protocol Port States</B><BR></A>
+  <UL><A=20
+    =
+href=3D"http://www.cisco.com/univercd/cc/td/doc/product/rtrmgmt/sw_ntman/=
+cwsimain/cwsi2/cwsiug2/vlan2/stpapp.htm#xtocid69354"><FONTSIZE=3D4>Listen=
+ing=20
+    State</FONT><BR></A><A=20
+    =
+href=3D"http://www.cisco.com/univercd/cc/td/doc/product/rtrmgmt/sw_ntman/=
+cwsimain/cwsi2/cwsiug2/vlan2/stpapp.htm#xtocid69355"><FONTSIZE=3D4>Learni=
+ng=20
+    State</FONT><BR></A><A=20
+    =
+href=3D"http://www.cisco.com/univercd/cc/td/doc/product/rtrmgmt/sw_ntman/=
+cwsimain/cwsi2/cwsiug2/vlan2/stpapp.htm#xtocid69356"><FONTSIZE=3D4>Forwar=
+ding=20
+    State</FONT><BR></A></UL></UL>
+<UL></UL>
+<P>
+<DIV><A name=3DHEADING1></A>
+<DIV></DIV><A name=3DLINK-stpapp.mif-firstpage></A><A =
+name=3DHEADING1-0></A>
+<H1><A name=3Dxtocid69350>Understanding <A name=3D20666><A =
+name=3D843>Spanning-Tree=20
+Protocol</A></H1>
+<P><A name=3DMARKER-2-1></A>Spanning-Tree Protocol is a link management =
+protocol=20
+that provides path redundancy while preventing undesirable loops in the =
+network.=20
+For an Ethernet network to function properly, only one active path can =
+exist=20
+between two stations. </P>
+<P>Multiple active paths between stations cause loops in the network. If =
+a loop=20
+exists in the network topology, the potential exists for duplication of=20
+messages. When loops occur, some switches see stations appear on both =
+sides of=20
+the switch. This condition confuses the forwarding algorithm and allows=20
+duplicate frames to be forwarded.</P>
+<P>To provide path redundancy, Spanning-Tree Protocol defines a tree =
+that spans=20
+all switches in an extended network. Spanning-Tree Protocol forces =
+certain=20
+redundant data paths into a standby (blocked) state. If one network =
+segment in=20
+the Spanning-Tree Protocol becomes unreachable, or if Spanning-Tree =
+Protocol=20
+costs change, the spanning-tree algorithm reconfigures the spanning-tree =
+
+topology and reestablishes the link by activating the standby path.</P>
+<P>Spanning-Tree Protocol operation is transparent to end stations, =
+which are=20
+unaware whether they are connected to a single LAN segment or a switched =
+LAN of=20
+multiple segments.</P><A name=3DHEADING1-5></A>
+<H2><A name=3Dxtocid69351>Election of the Root Switch</A></H2>
+<P>All switches in an extended LAN participating in Spanning-Tree =
+Protocol=20
+gather information on other switches in the network through an exchange =
+of data=20
+messages. These messages are bridge protocol data units (BPDUs). This =
+exchange=20
+of messages results in the following:</P>
+<UL>
+  <P>
+  <LI>The election of a unique root switch for the stable spanning-tree =
+network=20
+  topology.
+  <P></P>
+  <P></P>
+  <LI>The election of a designated switch for every switched LAN =
+segment.
+  <P></P>
+  <P></P>
+  <LI>The removal of loops in the switched network by placing redundant =
+switch=20
+  ports in a backup state.
+  <P></P></LI></UL>
+<P>The Spanning-Tree Protocol root switch is the logical center of the=20
+spanning-tree topology in a switched network. All paths that are not =
+needed to=20
+reach the root switch from anywhere in the switched network are placed =
+in=20
+Spanning-Tree Protocol backup mode. <A=20
+href=3D"http://www.cisco.com/univercd/cc/td/doc/product/rtrmgmt/sw_ntman/=
+cwsimain/cwsi2/cwsiug2/vlan2/stpapp.htm#15822">Table=20
+C-1</A> describes the root switch variables, that affect the entire=20
+spanning-tree performance.</P><BR><B>Table&nbsp; C-1: <A name=3D15822><A =
+
+name=3D1742>Root Switch Variables Affecting STP</B>=20
+<P></P>
+<TABLE border=3D1>
+  <TBODY>
+  <TR vAlign=3Dtop>
+    <TH align=3Dleft><B><B>Variable</B></B> </TH>
+    <TH align=3Dleft><B>Description</B> </TH></TR>
+  <TR vAlign=3Dtop>
+    <TH align=3Dleft>
+      <P>Hello Time</P></TH>
+    <TH align=3Dleft>
+      <P>Determines how often the switch broadcasts its hello message to =
+other=20
+      switches.</P></TH></TR>
+  <TR vAlign=3Dtop>
+    <TD>Maximum Age Timer </TD>
+    <TD>Measures the age of the received protocol information recorded =
+for a=20
+      port and ensures that this information is discarded when its age =
+limit=20
+      exceeds the value to the maximum age parameter recorded by the =
+switch. The=20
+      timeout value for this timer is the maximum age parameter of the =
+switches.=20
+    </TD></TR>
+  <TR vAlign=3Dtop>
+    <TD>Forward Delay Timer </TD>
+    <TD>Monitors the time spent by a port in the learning and listening=20
+      states. The timeout value is the forward delay parameter of the =
+switches.=20
+    </TD></TR></TBODY></TABLE>
+<P>BPDUs contain information about the transmitting switch and its =
+ports,=20
+including switch and port Media Access Control (MAC) addresses, switch =
+priority,=20
+port priority, and port cost. The Spanning-Tree Protocol uses this =
+information=20
+to elect the root switch and root port for the switched network, as well =
+as the=20
+root port and designated port for each switched segment.</P>
+<P><A=20
+href=3D"http://www.cisco.com/univercd/cc/td/doc/product/rtrmgmt/sw_ntman/=
+cwsimain/cwsi2/cwsiug2/vlan2/stpapp.htm#41768">Figure=20
+C-1</A> shows how BPDUs enable a Spanning-Tree Protocol=20
+topology.</P><BR><B>Figure&nbsp;C-1: <A name=3D41768><A =
+name=3D1474>BPDUs Enabling a=20
+Stable Spanning-Tree Protocol Topology</B>=20
+<P><BR><IMG align=3Dtop=20
+src=3D"http://www.cisco.com/univercd/illus/s/87/s5687.gif"><BR></P><A=20
+name=3DHEADING1-51></A>
+<H2><A name=3Dxtocid69352>Bridge Protocol Data Units</A></H2>
+<P>The stable active topology of a switched network is determined by the =
+
+following:</P>
+<UL>
+  <P>
+  <LI>The unique switch identifier (MAC address) associated with each =
+switch.
+  <P></P>
+  <P></P>
+  <LI>The path cost to the root associated with each switch port.
+  <P></P>
+  <P></P>
+  <LI>The port identifier (MAC address) associated with each switch =
+port.
+  <P></P></LI></UL>
+<P>Each configuration BPDU contains the following minimal =
+information:</P>
+<UL>
+  <P>
+  <LI>The unique identifier of the switch that the transmitting switch =
+believes=20
+  to be the root switch.
+  <P></P>
+  <P></P>
+  <LI>The cost of the path to the root from the transmitting port.
+  <P></P>
+  <P></P>
+  <LI>The identifier of the transmitting port.
+  <P></P></LI></UL>
+<P>The switch sends configuration BPDUs to communicate and compute the=20
+spanning-tree topology. A MAC frame conveying a BPDU sends the switch =
+group=20
+address to the destination address field. All switches connected to the =
+LAN on=20
+which the frame is transmitted receive the BPDU. BPDUs are not directly=20
+forwarded by the switch, but the information contained in the frame can =
+be used=20
+to calculate a BPDU by the receiving switch, and, if the topology =
+changes,=20
+instigate a BPDU transmission.</P>
+<P>A BPDU exchange results in the following:</P>
+<UL>
+  <P>
+  <LI>One switch is elected as the root switch.
+  <P></P>
+  <P></P>
+  <LI>The shortest distance to the root switch is calculated for each =
+switch.
+  <P></P>
+  <P></P>
+  <LI>A designated switch is selected. This is the switch closest to the =
+root=20
+  switch through which frames will be forwarded to the root.
+  <P></P>
+  <P></P>
+  <LI>A port for each switch is selected. This is the port providing the =
+best=20
+  path from the switch to the root switch.
+  <P></P>
+  <P></P>
+  <LI>Ports included in the Spanning-Tree Protocol are selected.
+  <P></P></LI></UL><A name=3DHEADING1-67></A>
+<H5>Spanning-Tree Protocol Configuration</H5>
+<P>If all switches are enabled with default settings, the switch with =
+the lowest=20
+MAC address in the network becomes the root switch. The network in <A=20
+href=3D"http://www.cisco.com/univercd/cc/td/doc/product/rtrmgmt/sw_ntman/=
+cwsimain/cwsi2/cwsiug2/vlan2/stpapp.htm#39855">Figure=20
+C-2</A> assumes that Switch A has the lowest MAC address and is =
+therefore the=20
+root switch. However, due to traffic patterns, number of forwarding =
+ports, or=20
+line types, Switch A might not be the ideal root switch. By increasing =
+the=20
+priority (lowering the numerical priority number) of the ideal switch so =
+that it=20
+then becomes the root switch, you force a Spanning-Tree Protocol =
+recalculation=20
+to form a new, stable topology.</P><BR><B>Figure&nbsp;C-2: <A =
+name=3D39855><A=20
+name=3D1501>Configuring a Stable Topology</B>=20
+<P><BR><IMG align=3Dtop=20
+src=3D"http://www.cisco.com/univercd/illus/s/88/s5688.gif"><BR></P>
+<P>When the stable Spanning-Tree Protocol topology is based on default=20
+parameters, the path between source and destination stations in a =
+switched=20
+network might not be the most ideal. For instance, connecting higher =
+speed links=20
+to a port that has a higher number than the current root port can cause =
+a=20
+root-port change. The point is to make the fastest link the root =
+port.</P>
+<P>For example, assume that Port 2 on Switch B in <A=20
+href=3D"http://www.cisco.com/univercd/cc/td/doc/product/rtrmgmt/sw_ntman/=
+cwsimain/cwsi2/cwsiug2/vlan2/stpapp.htm#14152">Figure=20
+C-3</A> is a fiber-optic link, and that Port 1 on Switch B (a UTP link) =
+is the=20
+root port. Network traffic might be more efficiently handled over the =
+high-speed=20
+fiber-optic link. By changing the Port Priority parameter for Port 2 to =
+a higher=20
+priority (lower numerical value) than Port 1, Port 2 becomes the root =
+port. The=20
+same change can occur by changing the Port Cost parameter for Port 2 to =
+a lower=20
+value than that of Port 1.</P><BR><B>Figure&nbsp;C-3: <A name=3D14152><A =
+
+name=3D1828>Default Parameters Resulting in Lower Network Efficiency</B> =
+
+<P><BR><IMG align=3Dtop=20
+src=3D"http://www.cisco.com/univercd/illus/s/90/s5690.gif"><BR></P><A=20
+name=3DHEADING1-75></A>
+<H2><A name=3Dxtocid69353>Spanning-Tree Protocol Port States</A></H2>
+<P>Propagation delays can occur when protocol information is passed =
+through a=20
+switched LAN. As a result, topology changes can take place at different =
+times=20
+and at different places in a switched network. When a switch port =
+transitions=20
+directly from non-participation in the stable topology to the forwarding =
+state,=20
+it can create temporary data loops. Ports must wait for new topology =
+information=20
+to propagate through the switched LAN before starting to forward frames. =
+They=20
+must also allow the frame lifetime to expire for frames that have been =
+forwarded=20
+using the old topology.</P>
+<P>Each port on a switch using Spanning-Tree Protocol exists in one of =
+the=20
+following five states:</P>
+<UL>
+  <P>
+  <LI>Blocking
+  <P></P>
+  <P></P>
+  <LI>Listening
+  <P></P>
+  <P></P>
+  <LI>Learning
+  <P></P>
+  <P></P>
+  <LI>Forwarding
+  <P></P>
+  <P></P>
+  <LI>Disabled
+  <P></P></LI></UL>
+<P>A port moves through these five states as follows:</P>
+<UL>
+  <P>
+  <LI>From initialization to blocking
+  <P></P>
+  <P></P>
+  <LI>From blocking to listening or to disabled
+  <P></P>
+  <P></P>
+  <LI>From listening to learning or to disabled
+  <P></P>
+  <P></P>
+  <LI>From learning to forwarding or to disabled
+  <P></P>
+  <P></P>
+  <LI>From forwarding to disabled
+  <P></P></LI></UL>
+<P><A=20
+href=3D"http://www.cisco.com/univercd/cc/td/doc/product/rtrmgmt/sw_ntman/=
+cwsimain/cwsi2/cwsiug2/vlan2/stpapp.htm#31509">Figure=20
+C-4</A> illustrates how a port moves through the five=20
+states.</P><BR><B>Figure&nbsp;C-4: <A name=3D31509><A =
+name=3D1536>Spanning-Tree=20
+Protocol Port States</B>=20
+<P><BR><IMG align=3Dtop=20
+src=3D"http://www.cisco.com/univercd/illus/s/91/s5691.gif"><BR></P>
+<P>You can modify each port state by using management software. When=20
+Spanning-Tree Protocol is enabled, every switch in the network goes =
+through the=20
+blocking state and the transitory states of listening and learning at =
+power up.=20
+If properly configured, the ports then stabilize to the forwarding or =
+blocking=20
+state.</P>
+<P>When the spanning-tree algorithm determines that a port should be =
+placed in=20
+the forwarding state, the following occurs:</P>
+<UL>
+  <P>
+  <LI>The port is put into the listening state while it waits for =
+protocol=20
+  information that suggests it should go to the blocking state.
+  <P></P>
+  <P></P>
+  <LI>The port waits for the expiration of a protocol timer that moves =
+the port=20
+  to the learning state.
+  <P></P>
+  <P></P>
+  <LI>In the learning state, the port continues to block frame =
+forwarding as it=20
+  learns station location information for the forwarding database.
+  <P></P>
+  <P></P>
+  <LI>The expiration of a protocol timer moves the port to the =
+forwarding state,=20
+  where both learning and forwarding are enabled.
+  <P></P></LI></UL><A name=3DHEADING1-98></A>
+<H5>Blocking State</H5>
+<P>A port in the blocking state does not participate in frame =
+forwarding, as=20
+shown in <A=20
+href=3D"http://www.cisco.com/univercd/cc/td/doc/product/rtrmgmt/sw_ntman/=
+cwsimain/cwsi2/cwsiug2/vlan2/stpapp.htm#26212">Figure=20
+C-5</A>. After initialization, a BPDU is sent to each port in the =
+switch. A=20
+switch initially assumes it is the root until it exchanges BPDUs with =
+other=20
+switches. This exchange establishes which switch in the network is =
+really the=20
+root. If only one switch resides in the network, no exchange occurs, the =
+forward=20
+delay timer expires, and the ports move to the listening state. A switch =
+always=20
+enters the blocking state following switch=20
+initialization.</P><BR><B>Figure&nbsp;C-5: <A name=3D26212><A =
+name=3D1554>Port=20
+States</B>=20
+<P><BR><IMG align=3Dtop=20
+src=3D"http://www.cisco.com/univercd/illus/s/93/s5693.gif"><BR></P>
+<P>A port in the blocking state performs as follows:</P>
+<UL>
+  <P>
+  <LI>Discards frames received from the attached segment.
+  <P></P>
+  <P></P>
+  <LI>Discards frames switched from another port for forwarding.
+  <P></P>
+  <P></P>
+  <LI>Does not incorporate station location into its address database. =
+(There is=20
+  no learning at this point, so there is no address database update.)
+  <P></P>
+  <P></P>
+  <LI>Receives BPDUs and directs them to the system module.
+  <P></P>
+  <P></P>
+  <LI>Does not transmit BPDUs received from the system module.
+  <P></P>
+  <P></P>
+  <LI>Receives and responds to network management messages.
+  <P></P></LI></UL><A name=3DHEADING1-109></A>
+<H3><A name=3Dxtocid69354>Listening State</A></H3>
+<P>The listening state is the first transitional state a port enters =
+after the=20
+blocking state, when Spanning-Tree Protocol determines that the port =
+should=20
+participate in frame forwarding. Learning is disabled in the listening =
+state. <A=20
+href=3D"http://www.cisco.com/univercd/cc/td/doc/product/rtrmgmt/sw_ntman/=
+cwsimain/cwsi2/cwsiug2/vlan2/stpapp.htm#26212">Figure=20
+C-5</A> shows a port in the listening state.</P>
+<P>A port in the listening state performs as follows:</P>
+<UL>
+  <P>
+  <LI>Discards frames received from the attached segment.
+  <P></P>
+  <P></P>
+  <LI>Discards frames switched from another port for forwarding.
+  <P></P>
+  <P></P>
+  <LI>Does not incorporate station location into its address database. =
+(There is=20
+  no learning at this point, so there is no address database update.)
+  <P></P>
+  <P></P>
+  <LI>Receives BPDUs and directs them to the system module.
+  <P></P>
+  <P></P>
+  <LI>Processes BPDUs received from the system module.
+  <P></P>
+  <P></P>
+  <LI>Receives and responds to network management messages.
+  <P></P></LI></UL><A name=3DHEADING1-118></A>
+<H3><A name=3Dxtocid69355>Learning State</A></H3>
+<P>A port in the learning state is preparing to participate in frame =
+forwarding.=20
+This is the second transitional state through which a port moves in =
+anticipation=20
+of frame forwarding. The port enters the learning state from the =
+listening state=20
+through the operation of Spanning-Tree Protocol.</P>
+<P>A port in the learning state performs as follows:</P>
+<UL>
+  <P>
+  <LI>Discards frames received from the attached segment.
+  <P></P>
+  <P></P>
+  <LI>Discards frames switched from another port for forwarding.
+  <P></P>
+  <P></P>
+  <LI>Incorporates station location into its address database.
+  <P></P>
+  <P></P>
+  <LI>Receives BPDUs and directs them to the system module.
+  <P></P>
+  <P></P>
+  <LI>Receives, processes, and transmits BPDUs received from the system =
+module.
+  <P></P>
+  <P></P>
+  <LI>Receives and responds to network management messages.
+  <P></P></LI></UL><A name=3DHEADING1-127></A>
+<H3><A name=3Dxtocid69356>Forwarding State</A></H3>
+<P>A port in the forwarding state forwards frames, as shown in <A=20
+href=3D"http://www.cisco.com/univercd/cc/td/doc/product/rtrmgmt/sw_ntman/=
+cwsimain/cwsi2/cwsiug2/vlan2/stpapp.htm#26212">Figure=20
+C-5</A>. The port enters the forwarding state from the learning state =
+through=20
+the operation of Spanning-Tree Protocol.</P>
+<P>A port in the forwarding state performs as follows:</P>
+<UL>
+  <P>
+  <LI>Forwards frames received from the attached segment.
+  <P></P>
+  <P></P>
+  <LI>Forwards frames switched from another port for forwarding.
+  <P></P>
+  <P></P>
+  <LI>Incorporates station location information into its address =
+database.
+  <P></P>
+  <P></P>
+  <LI>Receives BPDUs and directs them to the system module.
+  <P></P>
+  <P></P>
+  <LI>Processes BPDUs received from the system module.
+  <P></P>
+  <P></P>
+  <LI>Receives and responds to network management messages.
+  <P></P></LI></UL>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD><IMG align=3Dtop=20
+    src=3D"http://www.cisco.com/univercd/illus/warning.gif"></TD>
+    <TD><B>Caution</B>&nbsp;Use the immediate-forwarding =
+(<B>portfast</B>)=20
+      mode only on ports connected to individual workstations to allow =
+these=20
+      ports to come up and go directly to the forwarding state, rather =
+than=20
+      having to go through the entire spanning-tree initialization =
+process. To=20
+      prevent illegal topologies, enable Spanning-Tree Protocol on ports =
+
+      connected to switches or other devices that forward=20
+messages.</TD></TR></TBODY></TABLE><A name=3DHEADING1-137></A>
+<H5>Disabled State</H5>
+<P>A port in the disabled state does not participate in frame forwarding =
+or the=20
+operation of Spanning-Tree Protocol, as shown in <A=20
+href=3D"http://www.cisco.com/univercd/cc/td/doc/product/rtrmgmt/sw_ntman/=
+cwsimain/cwsi2/cwsiug2/vlan2/stpapp.htm#22347">Figure=20
+C-6</A>. A port in the disabled state is virtually=20
+nonoperational.</P><BR><B>Figure&nbsp;C-6: <A name=3D22347><A =
+name=3D1887>Port 2 in=20
+Disabled State</B>=20
+<P><BR><IMG align=3Dtop=20
+src=3D"http://www.cisco.com/univercd/illus/s/96/s5696.gif"><BR></P>
+<P>A disabled port performs as follows:</P>
+<UL>
+  <P>
+  <LI>Discards frames received from the attached segment.
+  <P></P>
+  <P></P>
+  <LI>Discards frames switched from another port for forwarding.
+  <P></P>
+  <P></P>
+  <LI>Does not incorporate station location into its address database. =
+(There is=20
+  no learning, so there is no address database update.)
+  <P></P>
+  <P></P>
+  <LI>Receives BPDUs, but does not direct them to the system module.
+  <P></P>
+  <P></P>
+  <LI>Does not receive BPDUs for transmission from the system module.
+  <P></P>
+  <P></P>
+  <LI>Receives and responds to network management messages.
+  <P></P></LI></UL>
+<P></P><A name=3DLINK-stpapp.mif-lastpage></A><A=20
+name=3DLINK-stpapp.mif-lastpage></A></DIV>
+<DIV></DIV>
+<P>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD><A href=3D"http://www.cisco.com/univercd/home/home.htm"><IMG =
+border=3D0=20
+      alt=3Dhome =
+src=3D"http://www.cisco.com/univercd/cc/lib/csco/home.gif" width=3D63=20
+      height=3D20></A><A=20
+      =
+href=3D"http://www.cisco.com/univercd/cc/td/doc/product/rtrmgmt/sw_ntman/=
+cwsimain/cwsi2/cwsiug2/vlan2/index.htm"><IMG=20
+      border=3D0 alt=3Dtoc =
+src=3D"http://www.cisco.com/univercd/cc/lib/csco/toc.gif"=20
+      width=3D63 height=3D20></A><A=20
+      =
+href=3D"http://www.cisco.com/univercd/cc/td/doc/product/rtrmgmt/sw_ntman/=
+cwsimain/cwsi2/cwsiug2/vlan2/vtpapp.htm"><IMG=20
+      border=3D0 alt=3Dprev =
+src=3D"http://www.cisco.com/univercd/cc/lib/csco/prev.gif"=20
+      width=3D63 height=3D20></A><A=20
+      =
+href=3D"http://www.cisco.com/univercd/cc/td/doc/product/rtrmgmt/sw_ntman/=
+cwsimain/cwsi2/cwsiug2/vlan2/errors.htm"><IMG=20
+      border=3D0 alt=3Dnext =
+src=3D"http://www.cisco.com/univercd/cc/lib/csco/next.gif"=20
+      width=3D63 height=3D20></A><A=20
+      =
+href=3D"http://www.cisco.com/univercd/cc/td/doc/cisintwk/ita/index.htm"><=
+IMG=20
+      border=3D0 alt=3Dglossary=20
+      src=3D"http://www.cisco.com/univercd/cc/lib/csco/gloss.gif" =
+width=3D63=20
+      height=3D20></A><A href=3D"http://www.cisco.com/feedback"><IMG =
+border=3D0=20
+      alt=3Dfeedback =
+src=3D"http://www.cisco.com/univercd/cc/lib/csco/feed.gif"=20
+      width=3D63 height=3D20></A><A=20
+      href=3D"http://www.cisco.com/univercd/home/search.htm"><IMG =
+border=3D0=20
+      alt=3Dsearch =
+src=3D"http://www.cisco.com/univercd/cc/lib/csco/search.gif"=20
+      width=3D63 height=3D20></A><A=20
+      href=3D"http://www.cisco.com/univercd/cc/lib/help.htm"><IMG =
+border=3D0=20
+      alt=3Dhelp =
+src=3D"http://www.cisco.com/univercd/cc/lib/csco/help.gif" width=3D63=20
+      height=3D20></A> <BR></TD></TR></TD></TR></TBODY></TABLE><A=20
+href=3D"http://www.cisco.com/univercd/cc/lib/copyrght.htm">Copyright =
+1989-1997</A>=20
+&copy; <A href=3D"http://www.cisco.com/">Cisco Systems Inc.</A> =
+</P></BODY></HTML>
+
+------=_NextPart_000_0000_01CC068B.34EB7A10
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.cisco.com/univercd/cc/lib/docstrip.gif
+
+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
+
+------=_NextPart_000_0000_01CC068B.34EB7A10
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.cisco.com/univercd/cc/lib/csco/home.gif
+
+R0lGODlhPwAUALMAAK6urn9/f1FRUejo6Nzc3GhoaJeXl7m5ufPz84uLi6KionR0dMXFxV1dXdHR
+0f///yH5BAAAAAAALAAAAAA/ABQAAASl8MlJq7046827/2AojmRpnmiqrpYTUALLurC80lP8DEpy
+SA6AwRAMABCSQ0JBsE0cBYAUEEM0DgPjA1AYOASJQQLwUBgGjK7z4Vg43t/HwSAZFLbkR8DBfgkY
+b2NrOBIxUjl4Ent9DwJTAHxOhI0PBHdyCYl6fDQFkQE/ki+IZQUGBU2Hm4wECwYLo04ITU8TsxMD
+AxIESLe7umvBwsPExcbHyCIRADs=
+
+------=_NextPart_000_0000_01CC068B.34EB7A10
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.cisco.com/univercd/cc/lib/csco/toc.gif
+
+R0lGODlhPwAUALMAAP///66urtHR0X9/f/Pz82hoaKKioujo6JeXl9zc3FFRUbm5uYuLi3R0dMXF
+xV1dXSH5BAAAAAAALAAAAAA/ABQAAAToEMhJq7046827/2AojmRpnmiqrhOBNEWzfETyJcQ5IFJS
+zB3B4DMQmHwUh0EiQCCMgEBgYKg1HsODgRFgBhAMB8DwkBEM1NwnsLQICoK3UYEgBBgAIeBQcBwQ
+SwEPAnw2RQBcUXhrXRYIQAs8CmoKeUN3cQ6VbBJSAIcBMgk2Hw4NSUOHlgCVEpV6U1KenlFdqpEF
+bR8/EgQNXV8SCF2trKsLQ3kFtZ22RgU2BMUePgwGub0D2gM5xZV8XQYNCH3MzFsCC7lUIwdQFAcH
+E+9QBPXv8RL5AAny9mosAgocSLCgwYMIE06IAAA7
+
+------=_NextPart_000_0000_01CC068B.34EB7A10
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.cisco.com/univercd/cc/lib/csco/prev.gif
+
+R0lGODlhPwAUALMAAP///39/f9HR0fPz89zc3KKioq6urrm5uWhoaIuLi5eXl1FRUejo6MXFxV1d
+XXR0dCH5BAAAAAAALAAAAAA/ABQAAATeEMhJq7046827/2AojmRpnmiqrprgBMGTDKEQsJk9FQW+
+6hLdwRAgAA6JgrEgkBgahN4xyZDcAFHAoBAo0GrXQcIACMwABQWjgWAcFBLHQEd0ywGL4G0MMCRE
+LjABBjQBTXgNAgJjAw4ADX86bRIKB3h6fQ8HBEZgFoYSCwajBk0KDacAOnlOZKxAbwhSIEAUoAAI
+hwGWDQEImAmWuEaTBzcIRgOstFe2hwQPCg/NDnCqNwQICrISB7IIN95csx8DnRQEXxIEVRPpEubu
+6lrnWgLzPvn6+/z9/v8APUQAADs=
+
+------=_NextPart_000_0000_01CC068B.34EB7A10
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.cisco.com/univercd/cc/lib/csco/next.gif
+
+R0lGODlhPwAUALMAAP///9HR0X9/f66urvPz811dXejo6Nzc3GhoaHR0dFFRUYuLi7m5ucXFxaKi
+opeXlyH5BAAAAAAALAAAAAA/ABQAAASbEMhJq7046827/2AojmRpnmiqrmKgHJMQeAfBbm4Sz518
+awFBYiDxEQaCgW3QABgWAEchwfhhgobCzDc0DHSHAkFQBfislyBggBgHAog3fDYoQIs8dEVtdsjg
+A4EDBgAuRHh6FnwEBVpZNowGBHEFMGZ5iRJ8AA0KMwwJDwhEC0QNbVELmIkElpo2r5oTNRIHhJm4
+ubq7vL2+KhEAOw==
+
+------=_NextPart_000_0000_01CC068B.34EB7A10
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.cisco.com/univercd/cc/lib/csco/gloss.gif
+
+R0lGODlhPwAUALMAANzc3H9/f+jo6GhoaPPz89HR0aKionR0dIuLi7m5uZeXl8XFxV1dXVFRUa6u
+rv///yH5BAAAAAAALAAAAAA/ABQAAATs8MlJq7046827/2AojmRpnmiqrhPhHLAjOTKLBgrxCIdM
+2yfAgFJAPH6PBMIgkCwQiIUTKt0pAglJwhEAIBc1j8Nw+XEFCQZBKBAMAGw34DFw8AqPAEK3GOar
+YjUGAQcNRzIDTQ8KCQQMBgUABI6Qkg+RCQEyAXgSAwUCDCELB0SGP4YzMgJcDE2sAa55mgqbnUe1
+CiIDWQ8EAacyCL1vShIGDsYPyAWli7YToQdzIQB6BgMGwQ9CCtm+AQEG07/i0w8HCt7QEwh+IwIF
+OhJtE5b21BJwFPfc88dhgKxYIEsgCwe3DCpcyLChwggAOw==
+
+------=_NextPart_000_0000_01CC068B.34EB7A10
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.cisco.com/univercd/cc/lib/csco/feed.gif
+
+R0lGODlhPwAUALMAAOjo6PPz82hoaJeXl39/f3R0dFFRUbm5udzc3F1dXaKioouLi9HR0a6urv//
+/wAAACH5BAAAAAAALAAAAAA/ABQAAATs0MlJq7046827/2AojmRpnmiqrhqTELAyGhIdNo3HEKdt
+gzgdjxJoEBoBSfGYdAAUi4PvsFAAJIAB4TA5DAYIR9C7YRQY6GShAWgUJOv2O5A4AAg+AuCQSArY
+Z2IFAAwCbQ0DBU0ZhThshWiQkpBkTj5XDgNcDAgHRw6GEghFL4uMQxKNjoR/q0E1sBJBMIg5P7IC
+ihw7FAB9DnQAvknBCAISUjVcoAhmEgM5CznMOImmF7wUBwUDf8jc3g4KAt0JNeQCMg7c3TnGiQNi
+OdYaAWEWDNf5RPcUo/7XhGHBtI+FwYMIEypcyLChiggAOw==
+
+------=_NextPart_000_0000_01CC068B.34EB7A10
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.cisco.com/univercd/cc/lib/csco/search.gif
+
+R0lGODlhPwAUALMAAOjo6H9/f9zc3JeXl2hoaPPz89HR0cXFxbm5uXR0dKKioouLi11dXVFRUa6u
+rv///yH5BAAAAAAALAAAAAA/ABQAAATB8MlJq7046827/2AojmRpnmiqruoRJIRSoI7DSgADPEVg
+n7XbQ0CYPQAIiWEwOEgKDt8MERU8EEyrYzFYOFcKRnNySAgECScTMLAFFjNHAmAgABwEQd26uicY
+ST4GBlFDAgcDAQ8BBhJ2EgJQP0EpCEkSBwyLbTVJeDWKjBINFZSUKGUTRA9tEg4DDw1ToY0PCz95
+pj8pCjEDCUk9CwuPCgEKCbSQBL+wujeRFQB8ODuQRtXZR9ZC3d7f4OHi4+QYEQA7
+
+------=_NextPart_000_0000_01CC068B.34EB7A10
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.cisco.com/univercd/cc/lib/csco/help.gif
+
+R0lGODlhPwAUALMAANHR0X9/f+jo6FFRUWhoaMXFxZeXl7m5uYuLi3R0dKKiotzc3PPz811dXa6u
+rv///yH5BAAAAAAALAAAAAA/ABQAAASP8MlJq7046827/2AojmRpnmiqriwFBNSAOU4bvvFc2x8+
+yQ+BArGjPQ4Fg+HAywAINJpMQCgIDIqHMdAACBK7ZgWQAJgBMgfCXEjXAjuq2OKTpOFR7bvwm49h
+fQeAT3oPAQgSan4ugHYSCgkGVYUBCQGSC4sTDJkTAJufEgIChl6kmiUBoaglB6essLGyixEAOw==
+
+------=_NextPart_000_0000_01CC068B.34EB7A10
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.cisco.com/univercd/cc/lib/csco/pdf_opt.gif
+
+R0lGODdhPAA/APcAAAAAAAAAMwAAZgAAmQAAzAAA/zMAADMAMzMAZjMAmTMAzDMA/2YAAGYAM2YA
+ZmYAmWYAzGYA/5kAAJkAM5kAZpkAmZkAzJkA/8wAAMwAM8wAZswAmcwAzMwA//8AAP8AM/8AZv8A
+mf8AzP8A/wAzAAAzMwAzZgAzmQAzzAAz/zMzADMzMzMzZjMzmTMzzDMz/2YzAGYzM2YzZmYzmWYz
+zGYz/5kzAJkzM5kzZpkzmZkzzJkz/8wzAMwzM8wzZswzmcwzzMwz//8zAP8zM/8zZv8zmf8zzP8z
+/wBmAABmMwBmZgBmmQBmzABm/zNmADNmMzNmZjNmmTNmzDNm/2ZmAGZmM2ZmZmZmmWZmzGZm/5lm
+AJlmM5lmZplmmZlmzJlm/8xmAMxmM8xmZsxmmcxmzMxm//9mAP9mM/9mZv9mmf9mzP9m/wCZAACZ
+MwCZZgCZmQCZzACZ/zOZADOZMzOZZjOZmTOZzDOZ/2aZAGaZM2aZZmaZmWaZzGaZ/5mZAJmZM5mZ
+ZpmZmZmZzJmZ/8yZAMyZM8yZZsyZmcyZzMyZ//+ZAP+ZM/+ZZv+Zmf+ZzP+Z/wDMAADMMwDMZgDM
+mQDMzADM/zPMADPMMzPMZjPMmTPMzDPM/2bMAGbMM2bMZmbMmWbMzGbM/5nMAJnMM5nMZpnMmZnM
+zJnM/8zMAMzMM8zMZszMmczMzMzM///MAP/MM//MZv/Mmf/MzP/M/wD/AAD/MwD/ZgD/mQD/zAD/
+/zP/ADP/MzP/ZjP/mTP/zDP//2b/AGb/M2b/Zmb/mWb/zGb//5n/AJn/M5n/Zpn/mZn/zJn//8z/
+AMz/M8z/Zsz/mcz/zMz/////AP//M///Zv//mf//zP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAPAA/AAAI/gCvCRxI
+sKDBgwgTKlzIsKHDhxAjSpxIsaLFixgzatzIsaPHjyBDihxJsqTJkyhTqlzJsqXAfzBjypxJsybI
+fxpxftR5EebNlzWDyhzocydQokWvxSTok5VSnh11+pyKk+rTpddYJY16FGjVr0hxOt3KUerXpVZn
+Iv359GpStEPHQi3rVWhQgVrnbtSbVSCGa38JOsXb1SNPp4Od/sWwBTHhxGT3Cu67BbDlrJUJ942c
+U/NAxRg89O2buDDXz9dgDJSFITBlzXnZjiYN+O9g2muNoh4cDbAH27NJc854+Fpmp6xrf658ezhG
+qI6zho7GGvhouWxvj3bt93fowLF1geM9Hrpv69aiqQd23hP19sWtr8m6Fu37Zr7EJ5v3Ln81/c/s
+WVScccoRRl00zI0WYEXQSSdadJ5Bht9zmqHHHWLHabYgRVDFZ1tjBMJG2IYTHRbYhbiV1pZ4fgGn
+nYoS/mTXjGrtROONJLqk44489ujjj0AGKeSQRBZp5JFIthQQAAA7
+
+------=_NextPart_000_0000_01CC068B.34EB7A10
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.cisco.com/univercd/illus/s/87/s5687.gif
+
+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
+
+------=_NextPart_000_0000_01CC068B.34EB7A10
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.cisco.com/univercd/illus/s/88/s5688.gif
+
+R0lGODdhyQCCAPIAAAAAACQkJElJSW1tbZKSkra2ttvb2////ywAAAAAyQCCAAAD/ni63H5DyAKl
+IC/rzbv/YCiOZAlRR3Aqqum+cCzP5oAOxkAYxED/wKBw+MApbITLjshsOp8bG2sFrVqvwEiEQkCF
+DIWweEwum8kGrMsgALjf8Lh8HscEeV5FelNYZgwBdIJygXMBdmojgINxgY4Ajl1tcQUAQAUDAAIk
+gUYNBIxwARakEwcEhW6HAHuJIKChbwSzfV1dCpiisK0wqG82Z11mPW+HC5mGhAIDzFrMBzmpkLuu
+IMhxOtKMEoSwljLRsmfjYdfGbHIXBQGOj9qq76tu1R7ocAIo45Oh8vM/BW02jeiEYtG9NDxmKVS4
+j1E/VvQ2GGzkKxY7Q97c8JqR/iOPhz6tKtEZ8I5OgGu64myMuEBkLEg6mPWYmWZdyjgsH2QMpcPW
+wgIIpT30l5MBSlWDRrETwG4UD6Y3VRZd0BBSVYuYtF2YszJiwwtgSlkoibQbnX9hWoL5kmpZzVkx
+Z5IVtIxOV1cTARjp0azvVYc74dwtcShJmsIBBjOwWQwo06aQ55o8Cmcq40Yv+QWuTKMFmxQKZnXY
+nDnWVkFF2Yhdzbo1KR2DEMkQCBqxYmhxc8/ULZM33N3EBHl0tY6p8eNKjScfhVwC8+QkBcmW0eLA
+pgBpObgszZ0bnYIGWoW/fYm7eU1kfQBpIbo6BwPnu5NFdDLCYWaJoWyPz7Ok/nogFqj33wJd7cdP
+CqV5VwcDnm0iUB/6lZaYGJlBFQdta0QwAjMewVeaQgm+M6B1C6iAHUDDDWEgIyIx81J098AAkEaK
+uHFBS9zBt6IgMP7iQHXX0VLFjiaJhN1LFqryQkUw9eXkk32lck6CIP1FR5KaPNACJqBdQaQhRn4J
+R4/umZDEG4TZaIeYlDAFG5L7CNRDKye5RaKX3LVI2ZWF5AdOJiN6ACgvHr5UaKGhWFgdfCcVxaYo
+YPSRWXR+/jNCio/y5walDUxiTESZagoVedUgqukgj23kTaP0hMofSSladqppAqzEaKCJiCllWYSI
+8gup9KjG3HHEOkfKc2Ml/iuBJz92getU0EZLwxK3SOtErNaeMloMUjDRVxrNTDfdKTKF1gwDPTTQ
+zA3lUgUsFrZCpAEqs71LWE3XhdctC9OpkJB14YnGgntshFdrwQXjoldEEZiixadHLKxBINiKgGEQ
+An0mJyIeNlCdibioJ5IXnx2AScndIsMwCip06x6aGYh0sQklC/EcBcMyMEketKlAyh6T0JaDHjgw
+p16h415RrQ069PGfN7HuY69Ez8awpQ9lQlMIhkDeSaBgejy4w8XezHxFyk4LPHAgZgNyUdIlqP2D
+Z1g7AMpFdIKhQ5fHLJOEHWyEcfDFh2QzdRYobLIv0Tk0bvcOkkxbsQle/mAwXK2QI1JLPg1QAJTJ
+eii0Rx7hQYBLNUk4HGvVxwTBrNKHmzx5BqxLW7vpQCSMhR8iZCfC7dDWzsMQZjvBewi+hwD8VLcv
+T8LQsJNwvDXZ0t6B8yRwacX0HyRPffUOCA/3DNVCwf1HsxcBfvjXN7F4E+d34P0H2LPUvBOvMxE/
+B/tHsb667xkfDWoGv9jNT1D/M0r7nAC9AmYvfexL4BEWeK36xS12/dOABekhvirITQgZjBkEAShB
+3PnPgyO84ANJsMFq3M8K+ftBCB9wQAomsINWICAQZmi32LXQFS/MYfFiwMPOpbB1JQxiDn/IPwMe
+cYJJDGCuBGimqQEl/i0jpIAPSvc/JZ7tiaOZGirwQ0WdSQAUsVODF78ow6kh6l1lkyAOgZjGDBTx
+GJsSQSHAmIg1XqGBRDych46YiUqtz49/HOII7liirHUAPkycASY4ZLJm7GF4PuBeWnwQyRhob3x8
+YdfeTLeD4SGvjEWoIw1sEJ6W7QAgjXzMA+DDjU7KLwyjw+UCugCfiekLA/7aGyi48cTYqXKVieuI
+AmjjDbhJrQmFeUZh8HGMTMDtY10STaEcWcJFGu0UFiDZG+5iJCfQ5jq4sFwEbJSBc6bAAlRxAyq7
+yQGXUUFdEstAIOb5gvpQ0zah4cyPSuQ1HH2Dni7oVq3epwcAVAwU/k9IDA+wBpSNRCdpE5KCI1mF
+UJqNbjzttCERGlTQBuQAVwpBQdIY2dGWItF0ioSGS/GihWXY1KY1zelNA7SsZdiShTgNqk6HGlSh
+HjOBrppMPD7YhLzEZ51ySMJMPUCaOSihFrb4nD1UAYqfdk8yuvBJH8YaMTiggptTjacyPsQkrsrT
+AXjoXQzRZQgr0WEWV/EFWqe6VTWlgS9Pykw/BpSLvWogICk6ip0m+SSwmrVPaaWhiIACmcc8BkkZ
+sQOTkCAGYYw1DJ51WjH80Fc1WWcpqL3IS5hk2I5W1RCRacom2joNbEBjs2CIlG6vyFtcrgpwji1G
+bJsiODlcBhKR/jWKhBbyk9t+hTKyKSwn9FI57vSEuZpFyVCQm9y+noS2sejRG05jW7sdEULKvUdw
+EvQX8Lb2CSd9Rgkmkp9IZdUWe0JVfvlpsdHiYnO0mAV3DlGS9+KPlCVYEVRnVZeR5O4dDZ7VdovB
+khzwhYWz2kZ+aUSDpJpnwj5iCVDK9wrgxMXEKOZNTFb8Wj5qoBa6mUmKZ+ybL3m1F7C0YHBPVVUX
+azDDjNhwTLeHIh0DeRD7DcJrgUyaIf8xtwMpDTDAK505yIap72Hohq9U3BdZFVqglW8IdixPxE5K
+DkdDxuEKKZstp2NkOw6MIVmCgUxGeVLGWbJZbXsmG41BGIAG/m1nJfWrU3zIU2cWhbSegmUOkBkA
+9000O00WpzHslreR4u1owVWa464WUouu5BMf3edQxZEB4VizJvLg5joErdWbApu0dsDJO6+WGfhI
+NFobrQEerATWjZlAnMeZLbgA8gOPrhOw5QmJowpqwPhJtI/hC1I9HplHcx6CnmcFimlfy1lGvraV
+nU0/cc9hlNWrtQXJEOix3tfd8H53VnMo73jD297vhje54celGyf338gz2b4BTvCCG/zgCE+4whfO
+8IY7/OEQj7jEJ07xilv84hjPuMY3zvGOe/zjIA+5yEdO8pKb/OQetAAGUlerDbCciq1g+V0GjvJj
+JFMKOvxE/jKhIZ7QIMIIJSOUk2v+u8RBACGKVCg491Yn1dic0mywTwRQwV+iX48UFZBAK/rSN3gK
+BB8Y6MjPlxVXZ6Vh6Fann9EZOp6YJ/PrEBL704/wFiOgPe3XA5oyP6GQuS9UEoGb8twpDRDHzRXv
+irgkFx+p+FMA7ha+1kPnlpBLxFv+8pi3lsyzTs15WUAxzotVdgCxrF4jHueKo0DOjcKy/+pBq9Co
+aOwrn7DPxb5a0JOC7SN1d4+jTfeKXBpWcXABB1nnb39zZQ/WYWFaXAA7YYPGQi05TZpDPGU58OnW
+z3WEG6Co8Pg4O4Q2d3QwpOs6gpMC7kchha8P7dg198RCaYczhl0a/URhlyrYTSYkH+CDSw4SZlxQ
+EBjiflvkbxHXDDcSQ/V3BMVXZ3CBCeB3fFd1dPigIbWiBJKwDgRoFHzxfr3XcW0neR+wFi2RD7AH
+WmEnU7nlOTVREMezEd5je5mHMRpSg0KQAAA7
+
+------=_NextPart_000_0000_01CC068B.34EB7A10
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.cisco.com/univercd/illus/s/90/s5690.gif
+
+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
+AAA7
+
+------=_NextPart_000_0000_01CC068B.34EB7A10
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.cisco.com/univercd/illus/s/91/s5691.gif
+
+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
+o8246pSDrO6uKxxIX/saWIvSnScESAAAOw==
+
+------=_NextPart_000_0000_01CC068B.34EB7A10
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.cisco.com/univercd/illus/s/93/s5693.gif
+
+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
+C0KAD5H/i3JFuHWPByfeXd8OIQEAOw==
+
+------=_NextPart_000_0000_01CC068B.34EB7A10
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.cisco.com/univercd/illus/warning.gif
+
+R0lGODlhJQAaAIAAAP///wAAACwAAAAAJQAaAAACU4SPqcut4aI8Ac77Kt60Wj55GhiKH8mYI5p+
+Hru8hgx3q1jbLl6b+onyzYRB1ZBXFKqAmKVlmfQ5mZIpYEptWI/GpvNHjGAh48v4nEWgz7m2u1EA
+ADs=
+
+------=_NextPart_000_0000_01CC068B.34EB7A10
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.cisco.com/univercd/illus/s/96/s5696.gif
+
+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
+vvHWYfEeH28dH/JZMPIkP50gzygJAAA7
+
+------=_NextPart_000_0000_01CC068B.34EB7A10--
